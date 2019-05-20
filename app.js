@@ -6,12 +6,15 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
 var homeRouter = require('./routes/home');
 
+//连接数据库
 mongoose.connect('mongodb://localhost:27017/blog');
 var db = mongoose.connection;
 db.on('open',function(){
