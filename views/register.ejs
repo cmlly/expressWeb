@@ -14,26 +14,26 @@
 <div class="wel" id="git"></div>
 <div class="wel" id="from">
     <div class="box-2 le-2">
-        <form action="" method="post">
+        <form action="/users" method="post">
             <div class="flrg-1">
                 <h3>注册</h3>
                 <div class="a">
-                    <input type="text" class="in-1" placeholder="您的用户名">
+                    <input type="text" class="in-1" name="name" placeholder="您的用户名">
                 </div>
                 <div class="a">
-                    <input type="password" class="in-1" placeholder="输入密码">
+                    <input type="password" class="in-1" id="pwd1" name="password" placeholder="输入密码">
                 </div>
                 <div class="a">
-                    <input type="password" class="in-1" placeholder="再次确认密码">
+                    <input type="password" class="in-1" id="pwd2" name="password" placeholder="再次确认密码" onkeyup="confirmPwd()">
                 </div>
                 <div class="a">
-                    <input type="text" class="in-1" placeholder="输入手机号码">
+                    <input type="text" class="in-1" name="phone" placeholder="输入手机号码">
                 </div>
                 <div class="a">
-                    <input type="email" class="in-1" placeholder="输入邮箱地址">
+                    <input type="email" class="in-1" name="email" placeholder="输入邮箱地址">
                 </div>
                 <div class="a">
-                    <button type="button">注册</button>
+                    <button type="submit">注册</button>
                 </div>
             </div>
         </form>
@@ -43,4 +43,13 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        function confirmPwd() { 
+            var pwd1 = $('#pwd1').val();
+            var pwd2 = $('#pwd2').val();
+            if(!pwd2 == pwd1){
+                $('#pwd2').css('border','red')
+            }
+         }
+    </script>
 <% include ./footer %>
